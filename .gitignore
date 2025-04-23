@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+**/__pycache__/
+**/*.py[cod]
+
+model.pth
+
+*.env
+*.DS_Store
+
+data/
+
+*.log
+*.out
+
+.vscode/
+
