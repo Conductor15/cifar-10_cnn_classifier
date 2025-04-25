@@ -2,43 +2,87 @@
 
 A convolutional neural network (CNN) trained on CIFAR-10 with PyTorch.
 
-## Setup
+## Information about dataset
+
+Object Recognition in Images - Identify the subject of 60,000 labeled images
+👉 [See more on Kaggle](https://www.kaggle.com/c/cifar-10/)
+
+## Information about dataset
+
+## 🧠 Architecture Overview
+
+**Input:** `3×32×32` image (CIFAR-10)  
+**Kernel size:** All `Conv2d` layers use `3×3` kernels
+
+---
+
+### 🔷 Block 1
+- `Conv2d(3 → 32, 3×3)` + **SiLU** + *BatchNorm*
+- `Conv2d(32 → 32, 3×3)` + **SiLU** + *BatchNorm*
+- **MaxPooling** + *Dropout*
+
+---
+
+### 🔷 Block 2
+- `Conv2d(32 → 64, 3×3)` + **SiLU** + *BatchNorm*
+- `Conv2d(64 → 64, 3×3)` + **SiLU** + *BatchNorm*
+- **MaxPooling** + *Dropout*
+
+---
+
+### 🔷 Block 3
+- `Conv2d(64 → 128, 3×3)` + **SiLU** + *BatchNorm*
+- `Conv2d(128 → 128, 3×3)` + **SiLU** + *BatchNorm*
+- `Conv2d(128 → 128, 3×3)` + **SiLU** + *BatchNorm*
+- **MaxPooling** + *Dropout*
+
+---
+
+### 🔷 Block 4
+- `Conv2d(128 → 256, 3×3)` + **SiLU** + *BatchNorm*
+- `Conv2d(256 → 256, 3×3)` + **SiLU** + *BatchNorm*
+- `Conv2d(256 → 256, 3×3)` + **SiLU** + *BatchNorm*
+- **MaxPooling** + *Dropout*
+
+---
+
+### 🔚 Classifier
+- `Flatten`
+- `Linear(1024 → 512)` + **SiLU**
+- `Linear(512 → 10)`
+
+---
+
+✅ **Test Accuracy:** ~**90%** after **100 epochs**
+
+
+
+## Run code
 
 ```bash
 git clone https://github.com/your-username/cifar10-classifier.git
 cd cifar10-classifier
 pip install -r requirements.txt
 ```
-### Architecture Overview
 
-Input: 3x32x32 image (CIFAR-10)
+### Customize your params in `config.py`
 
-Block 1:
-- Conv2d(3 → 32), SiLU, BatchNorm
-- Conv2d(32 → 32), SiLU, BatchNorm
-- MaxPool, Dropout
+```
+BATCH_SIZE_TRAIN = 
+BATCH_SIZE_TEST = 
+LEARNING_RATE =
+NUM_EPOCHS =
+LR_GAMMA = 
+MODEL_PATH = "your_output_file"
+```
+### 🚀 Training the Model
 
-Block 2:
-- Conv2d(32 → 64), SiLU, BatchNorm
-- Conv2d(64 → 64), SiLU, BatchNorm
-- MaxPool, Dropout
+Once dependencies are installed, you can train the model using:
 
-Block 3:
-- Conv2d(64 → 128), SiLU, BatchNorm
-- Conv2d(128 → 128), SiLU, BatchNorm
-- Conv2d(128 → 128), SiLU, BatchNorm
-- MaxPool, Dropout
+```
+python train.py
+```
 
-Block 4:
-- Conv2d(128 → 256), SiLU, BatchNorm
-- Conv2d(256 → 256), SiLU, BatchNorm
-- Conv2d(256 → 256), SiLU, BatchNorm
-- MaxPool, Dropout
-
-Classifier:
-- Flatten
-- Linear(1024 → 512), SiLU
-- Linear(512 → 10)
-
-
-Accuracy in test set ~90% after 100 epochs
+### Evaluating the Model
+After training, you can evaluate the model on the CIFAR-10 test set:
+`python evaluate.py`
