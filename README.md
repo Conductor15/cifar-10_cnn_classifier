@@ -87,5 +87,5 @@ python train.py
 After training, you can evaluate the model on the CIFAR-10 test set or your own model:
 
 ```
-python evaluate.py
+python eval.py
 ```
