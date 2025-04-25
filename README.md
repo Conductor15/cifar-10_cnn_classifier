@@ -11,7 +11,7 @@ Object Recognition in Images - Identify the subject of 60,000 labeled images
 </p>
 
 
-## 🧠 Architecture Overview
+## Architecture Overview
 
 **Input:** `3×32×32` image (CIFAR-10)  
 **Kernel size:** All `Conv2d` layers use `3×3` kernels
@@ -48,7 +48,7 @@ Object Recognition in Images - Identify the subject of 60,000 labeled images
 
 ---
 
-### 🔚 Classifier
+### Classifier
 - `Flatten`
 - `Linear(1024 → 512)` + **SiLU**
 - `Linear(512 → 10)`
@@ -86,5 +86,6 @@ python train.py
 ```
 
 ### Evaluating the Model
-After training, you can evaluate the model on the CIFAR-10 test set:
-`python evaluate.py`
+After training, you can evaluate the model on the CIFAR-10 test set or your own model:
+
+```python evaluate.py```
