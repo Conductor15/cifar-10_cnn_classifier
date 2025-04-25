@@ -6,8 +6,10 @@ A convolutional neural network (CNN) trained on CIFAR-10 with PyTorch.
 
 Object Recognition in Images - Identify the subject of 60,000 labeled images
 👉 [See more on Kaggle](https://www.kaggle.com/c/cifar-10/)
+<p align="center">
+  <img src="https://production-media.paperswithcode.com/datasets/4fdf2b82-2bc3-4f97-ba51-400322b228b1.png" alt="Model Architecture" width="500"/>
+</p>
 
-## Information about dataset
 
 ## 🧠 Architecture Overview
 
