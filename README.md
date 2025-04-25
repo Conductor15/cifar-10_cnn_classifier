@@ -62,8 +62,6 @@ Object Recognition in Images - Identify the subject of 60,000 labeled images
 ## Run code
 
 ```bash
-git clone https://github.com/your-username/cifar10-classifier.git
-cd cifar10-classifier
 pip install -r requirements.txt
 ```
 
