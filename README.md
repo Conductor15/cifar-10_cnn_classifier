@@ -53,7 +53,14 @@ Object Recognition in Images - Identify the subject of 60,000 labeled images
 ---
 
 **Test Accuracy:** ~**90%** after **100 epochs**
-
+With:
+```
+BATCH_SIZE_TRAIN = 256
+BATCH_SIZE_TEST = 64
+LEARNING_RATE = 0.001
+NUM_EPOCHS = 200
+LR_GAMMA = 0.96
+```
 
 
 ## Run code
@@ -62,16 +69,8 @@ Object Recognition in Images - Identify the subject of 60,000 labeled images
 pip install -r requirements.txt
 ```
 
-### Customize your params in `config.py`
+### Customize params in `config.py`
 
-```
-BATCH_SIZE_TRAIN = 
-BATCH_SIZE_TEST = 
-LEARNING_RATE =
-NUM_EPOCHS =
-LR_GAMMA = 
-MODEL_PATH = "your_output_file"
-```
 ### Training the Model
 
 Once dependencies are installed, you can train the model using:
