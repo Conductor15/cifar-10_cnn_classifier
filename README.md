@@ -5,10 +5,7 @@ A convolutional neural network (CNN) trained on CIFAR-10 with PyTorch.
 ## Information about dataset
 
 Object Recognition in Images - Identify the subject of 60,000 labeled images
-👉 [See more on Kaggle](https://www.kaggle.com/c/cifar-10/)
-<p align="center">
-  <img src="https://production-media.paperswithcode.com/datasets/4fdf2b82-2bc3-4f97-ba51-400322b228b1.png" alt="Model Architecture" width="500"/>
-</p>
+[See more](https://www.cs.toronto.edu/~kriz/cifar.html)
 
 
 ## Architecture Overview
@@ -18,21 +15,21 @@ Object Recognition in Images - Identify the subject of 60,000 labeled images
 
 ---
 
-### 🔷 Block 1
+### Block 1
 - `Conv2d(3 → 32, 3×3)` + **SiLU** + *BatchNorm*
 - `Conv2d(32 → 32, 3×3)` + **SiLU** + *BatchNorm*
 - **MaxPooling** + *Dropout*
 
 ---
 
-### 🔷 Block 2
+### Block 2
 - `Conv2d(32 → 64, 3×3)` + **SiLU** + *BatchNorm*
 - `Conv2d(64 → 64, 3×3)` + **SiLU** + *BatchNorm*
 - **MaxPooling** + *Dropout*
 
 ---
 
-### 🔷 Block 3
+### Block 3
 - `Conv2d(64 → 128, 3×3)` + **SiLU** + *BatchNorm*
 - `Conv2d(128 → 128, 3×3)` + **SiLU** + *BatchNorm*
 - `Conv2d(128 → 128, 3×3)` + **SiLU** + *BatchNorm*
@@ -40,7 +37,7 @@ Object Recognition in Images - Identify the subject of 60,000 labeled images
 
 ---
 
-### 🔷 Block 4
+### Block 4
 - `Conv2d(128 → 256, 3×3)` + **SiLU** + *BatchNorm*
 - `Conv2d(256 → 256, 3×3)` + **SiLU** + *BatchNorm*
 - `Conv2d(256 → 256, 3×3)` + **SiLU** + *BatchNorm*
@@ -55,7 +52,7 @@ Object Recognition in Images - Identify the subject of 60,000 labeled images
 
 ---
 
-✅ **Test Accuracy:** ~**90%** after **100 epochs**
+**Test Accuracy:** ~**90%** after **100 epochs**
 
 
 
@@ -75,7 +72,7 @@ NUM_EPOCHS =
 LR_GAMMA = 
 MODEL_PATH = "your_output_file"
 ```
-### 🚀 Training the Model
+### Training the Model
 
 Once dependencies are installed, you can train the model using:
 
